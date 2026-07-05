@@ -24,7 +24,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const title = "SignalsHQ — Tax automation for CPA firms";
+const title = "SignalsHQ ";
 const description =
   "SignalsHQ answers tax questions with IRS citations, organizes client documents automatically, and drafts first-pass returns — so your firm spends busy season advising, not typing.";
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { GridBox } from "./GridBox";
 import { VIDEO_URL } from "@/lib/data";
 
 /* Prototype easing for the load-in (cubic-bezier(0.22,1,0.36,1)) + rev-up. */
@@ -70,9 +71,27 @@ export function Hero() {
           }
         />
 
-        <span className="font-mono text-[11px] font-medium uppercase tracking-[0.35em] text-accent/85">
-          AI Infrastructure for Tax
-        </span>
+        <div className="relative mb-6 inline-flex items-center justify-center px-6 py-2.5">
+          <div className="pointer-events-none absolute inset-0 z-0">
+            <div className="absolute inset-0 border border-line" />
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" className="absolute -left-[7.5px] -top-[7.5px] text-accent/60">
+              <path d="M7.5 0V15M0 7.5H15" stroke="currentColor" />
+            </svg>
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" className="absolute -right-[7.5px] -top-[7.5px] text-accent/60">
+              <path d="M7.5 0V15M0 7.5H15" stroke="currentColor" />
+            </svg>
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" className="absolute -bottom-[7.5px] -left-[7.5px] text-accent/60">
+              <path d="M7.5 0V15M0 7.5H15" stroke="currentColor" />
+            </svg>
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" className="absolute -bottom-[7.5px] -right-[7.5px] text-accent/60">
+              <path d="M7.5 0V15M0 7.5H15" stroke="currentColor" />
+            </svg>
+          </div>
+          <span className="relative z-1 flex items-center font-mono text-[12px] font-bold uppercase tracking-[0.35em] text-accent drop-shadow-[0_0_12px_rgba(240,178,90,0.6)]">
+            <span className="mr-3 inline-block h-[1.1em] w-[0.6em] animate-pulse bg-accent shadow-[0_0_15px_rgba(240,178,90,0.8)]" />
+            AI Infrastructure for Tax
+          </span>
+        </div>
 
         <h1 className="mt-[26px] max-w-[14ch] overflow-hidden font-serif text-[clamp(44px,11vw,130px)] font-normal leading-[0.98] tracking-[-0.01em]">
           <motion.span
