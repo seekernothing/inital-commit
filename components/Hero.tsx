@@ -74,7 +74,7 @@ export function Hero() {
           AI Infrastructure for Tax
         </span>
 
-        <h1 className="mt-[26px] max-w-[14ch] overflow-hidden font-serif text-[clamp(56px,9vw,130px)] font-normal leading-[0.98] tracking-[-0.01em]">
+        <h1 className="mt-[26px] max-w-[14ch] overflow-hidden font-serif text-[clamp(44px,11vw,130px)] font-normal leading-[0.98] tracking-[-0.01em]">
           <motion.span
             className="block"
             variants={lineVariants}
@@ -86,7 +86,7 @@ export function Hero() {
           </motion.span>
         </h1>
         <h1 
-          className="max-w-[14ch] overflow-hidden font-serif text-[clamp(56px,9vw,130px)] font-normal leading-[0.98] tracking-[-0.01em]"
+          className="max-w-[14ch] overflow-hidden font-serif text-[clamp(44px,11vw,130px)] font-normal leading-[0.98] tracking-[-0.01em]"
           style={{ paddingBottom: "0.15em", marginBottom: "calc(22px - 0.15em)" }}
         >
           <motion.span
