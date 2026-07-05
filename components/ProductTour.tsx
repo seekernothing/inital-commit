@@ -60,7 +60,7 @@ function StepCopy({
 export function ProductTour() {
   return (
     <section id="product" className="relative z-1">
-      <div className="mx-auto max-w-[1180px] px-6 pt-[clamp(90px,12vw,150px)]">
+      <div className="relative mx-auto max-w-[1180px] px-6 pt-[clamp(90px,12vw,150px)]">
         <SectionHead eyebrow="Product">
           Cut research and preparation hours with{" "}
           <em className="italic text-accent">AI-driven automation.</em>

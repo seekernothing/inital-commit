@@ -1,5 +1,7 @@
 "use client";
 
+import { GridBox } from "./GridBox";
+
 import {
   useCallback,
   useEffect,
@@ -150,6 +152,7 @@ export function DemoPlayer() {
         "py-[clamp(90px,12vw,150px)]"
       )}
     >
+      <GridBox className="inset-x-0" />
       <Reveal>
         <div
           ref={containerRef}

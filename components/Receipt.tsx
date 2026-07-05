@@ -1,5 +1,6 @@
 "use client";
 
+import { GridBox } from "./GridBox";
 import { useCallback, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { motion, useReducedMotion } from "framer-motion";
@@ -83,6 +84,8 @@ export function Receipt() {
       />
 
       <section className="relative z-2 mx-auto max-w-[1180px] px-6 py-[clamp(90px,12vw,150px)]">
+        <GridBox />
+
         <SectionHead eyebrow="Every feature · one ledger">
           See what a season with us,{" "}
           <em className="italic text-accent">itemized.</em>

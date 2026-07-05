@@ -1,5 +1,7 @@
 "use client";
 
+import { GridBox } from "./GridBox";
+
 import { useRef } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
 import { useCounter } from "@/hooks/useCounter";
@@ -32,10 +34,13 @@ function StatItem({ value, suffix, label }: Stat) {
 
 export function Stats() {
   return (
-    <section className="relative z-1 mx-auto max-w-[1180px] px-6 py-[clamp(60px,8vw,110px)]">
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-5 text-center">
+    <section className="relative z-1 mx-auto max-w-[1180px] px-6">
+      <GridBox />
+      <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-line sm:divide-x sm:divide-y-0 text-center">
         {STATS.map((s) => (
-          <StatItem key={s.label} {...s} />
+          <div key={s.label} className="py-[clamp(60px,8vw,110px)] sm:px-4">
+            <StatItem {...s} />
+          </div>
         ))}
       </div>
     </section>
