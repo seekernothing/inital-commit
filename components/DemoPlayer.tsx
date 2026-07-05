@@ -79,11 +79,17 @@ export function DemoPlayer() {
   }, []);
 
   const toggleFullscreen = useCallback(() => {
-    setFullscreen((f) => {
-      const next = !f;
-      document.body.style.overflow = next ? "hidden" : "";
-      return next;
-    });
+    if (!document.fullscreenElement) {
+      if (containerRef.current?.requestFullscreen) {
+        containerRef.current.requestFullscreen().catch((err) => {
+          console.error("Error attempting to enable fullscreen:", err);
+        });
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(console.error);
+      }
+    }
   }, []);
 
   const handleScrub = useCallback(
@@ -123,17 +129,14 @@ export function DemoPlayer() {
     [],
   );
 
-  // Escape exits fullscreen.
+  // Sync React state with native fullscreen
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && fullscreen) {
-        setFullscreen(false);
-        document.body.style.overflow = "";
-      }
+    const onFsChange = () => {
+      setFullscreen(!!document.fullscreenElement);
     };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [fullscreen]);
+    document.addEventListener("fullscreenchange", onFsChange);
+    return () => document.removeEventListener("fullscreenchange", onFsChange);
+  }, []);
 
   // Controls stay visible whenever the video is paused (incl. autoplay blocked)
   // and while not idle; they only auto-hide during uninterrupted playback.
@@ -144,7 +147,7 @@ export function DemoPlayer() {
       id="demo"
       className={clsx(
         "relative z-1 mx-auto max-w-[1180px] px-6",
-        "py-[clamp(90px,12vw,150px)]",
+        "py-[clamp(90px,12vw,150px)]"
       )}
     >
       <Reveal>
@@ -157,7 +160,7 @@ export function DemoPlayer() {
           className={clsx(
             "group/vp relative mx-auto aspect-video overflow-hidden bg-bg-elevated",
             fullscreen
-              ? "fixed inset-0 z-[2147483647] h-screen w-screen max-w-none rounded-none border-0 shadow-none"
+              ? "h-full w-full max-w-none rounded-none border-0"
               : "max-w-[1180px] rounded-2xl border border-accent/[0.18] shadow-vp",
           )}
         >
@@ -196,7 +199,7 @@ export function DemoPlayer() {
               never an empty box (e.g. when autoplay is blocked) */}
           <button
             type="button"
-            onClick={togglePlay}
+            onClick={() => { togglePlay(); try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
             aria-label="Play"
             className={clsx(
               "absolute left-1/2 top-1/2 z-15 flex h-[70px] w-[70px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-[10px] transition-all duration-300 hover:scale-105 hover:bg-white/20",
@@ -234,7 +237,7 @@ export function DemoPlayer() {
           >
             <button
               type="button"
-              onClick={togglePlay}
+              onClick={() => { togglePlay(); try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
               aria-label={paused ? "Play" : "Pause"}
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-[10px] transition-all duration-150 hover:scale-105 hover:bg-white/20 active:scale-95"
             >
@@ -291,7 +294,7 @@ export function DemoPlayer() {
 
             <button
               type="button"
-              onClick={toggleMute}
+              onClick={() => { toggleMute(); try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
               aria-label={muted ? "Unmute" : "Mute"}
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-[10px] transition-all duration-150 hover:scale-105 hover:bg-white/20 active:scale-95"
             >
@@ -302,7 +305,7 @@ export function DemoPlayer() {
 
             <button
               type="button"
-              onClick={toggleFullscreen}
+              onClick={() => { toggleFullscreen(); try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
               aria-label={fullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-[10px] transition-all duration-150 hover:scale-105 hover:bg-white/20 active:scale-95"
             >

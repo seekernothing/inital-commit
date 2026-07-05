@@ -63,7 +63,14 @@ export function Pricing() {
                 type="button"
                 role="tab"
                 aria-selected={active === i}
-                onClick={() => setActive(i)}
+                onClick={() => {
+                  setActive(i);
+                  try {
+                    new Audio("/assets/smoothing-exit.webm").play();
+                  } catch (e) {
+                    console.error("Audio play failed", e);
+                  }
+                }}
                 className={clsx(
                   "relative z-2 grid h-full w-full cursor-pointer place-items-center font-sans text-[14.5px] transition-colors duration-[280ms] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
                   active === i
@@ -112,6 +119,7 @@ export function Pricing() {
               </ul>
               <a
                 href="#"
+                onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
                 className={clsx(
                   "block w-full cursor-pointer rounded-full border px-7 py-[14px] text-center font-sans text-[14.5px] font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
                   hot

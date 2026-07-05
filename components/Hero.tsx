@@ -85,7 +85,10 @@ export function Hero() {
             Tax season
           </motion.span>
         </h1>
-        <h1 className="mb-[22px] max-w-[14ch] overflow-hidden font-serif text-[clamp(56px,9vw,130px)] font-normal leading-[0.98] tracking-[-0.01em]">
+        <h1 
+          className="max-w-[14ch] overflow-hidden font-serif text-[clamp(56px,9vw,130px)] font-normal leading-[0.98] tracking-[-0.01em]"
+          style={{ paddingBottom: "0.15em", marginBottom: "calc(22px - 0.15em)" }}
+        >
           <motion.span
             className="block italic text-accent [text-shadow:0_0_15px_rgba(240,178,90,.15)]"
             variants={lineVariants}
@@ -118,12 +121,14 @@ export function Hero() {
         >
           <a
             href="#"
+            onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
             className="cursor-pointer rounded-full border border-transparent bg-accent px-7 py-[14px] font-sans text-[14.5px] font-medium text-bg shadow-glow-amber transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-deep hover:shadow-glow-amber-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Book a demo
           </a>
           <a
             href="#demo"
+            onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
             className="cursor-pointer rounded-full border border-accent bg-transparent px-7 py-[14px] font-sans text-[14.5px] font-medium text-ink transition-all duration-300 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             See how it works
