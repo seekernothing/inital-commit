@@ -43,7 +43,7 @@ export function Pricing() {
         <div
           role="tablist"
           aria-label="Pricing tier"
-          className="relative z-2 h-12 w-[340px] scale-110 rounded-full border border-line bg-bg-elevated p-[5px] tracking-[0.4px] shadow-[0_14px_40px_rgba(13,26,46,.35),0_0_0_1px_rgba(240,178,90,.04)]"
+          className="relative z-2 h-12 w-[290px] sm:w-[340px] scale-100 sm:scale-110 rounded-full border border-line bg-bg-elevated p-[5px] tracking-[0.4px] shadow-[0_14px_40px_rgba(13,26,46,.35),0_0_0_1px_rgba(240,178,90,.04)]"
         >
           <div className="relative grid h-full w-full grid-cols-3">
             {/* sliding indicator */}

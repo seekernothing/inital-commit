@@ -94,7 +94,7 @@ export function ProductTour() {
                 <ArrowDoodle className="mx-auto mt-2 block w-[46px] rotate-[65deg] -scale-100 text-muted" />
               </span>
 
-              <div className="relative w-[min(76%,470px)]">
+              <div className="relative w-[min(90%,470px)] md:w-[min(76%,470px)]">
                 <div
                   className={`ml-auto w-[86%] rounded-[16px_16px_4px_16px] ${glass} px-4 py-[13px] font-mono text-[11px] leading-[1.7] text-muted`}
                 >
@@ -157,7 +157,7 @@ export function ProductTour() {
               </StepCopy>
             </div>
             <div className="sw-visual">
-              <div className="relative w-[min(76%,470px)]">
+              <div className="relative w-[min(90%,470px)] md:w-[min(76%,470px)]">
                 {/* stacked docs */}
                 <div className="relative z-2 -mb-4 flex justify-center gap-3">
                   {[
@@ -237,7 +237,7 @@ export function ProductTour() {
               </StepCopy>
             </div>
             <div className="sw-visual">
-              <div className="relative w-[min(76%,470px)]">
+              <div className="relative w-[min(90%,470px)] md:w-[min(76%,470px)]">
                 <div className="rounded-[14px] bg-card px-[22px] pb-[18px] pt-[22px] font-mono text-paper-ink shadow-[0_30px_70px_rgba(0,0,0,.55)]">
                   <div className="mb-[14px] border-b border-dashed border-line-on-light pb-2.5 text-center text-[9px] tracking-[0.2em] text-paper-sub">
                     DRAFT · FORM 1040 · REYES
