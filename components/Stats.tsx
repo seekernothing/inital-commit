@@ -18,7 +18,7 @@ function StatItem({ value, suffix, label }: Stat) {
       <div className="font-mono text-[clamp(42px,6vw,68px)] font-semibold tracking-[-0.04em] text-ink [text-shadow:0_0_18px_rgba(240,178,90,0.18)]">
         <span>{display}</span>
         {suffix && (
-          <sup className="text-[0.45em] text-ink opacity-70">{suffix}</sup>
+          <span className="ml-1 text-[0.6em] text-ink opacity-70">{suffix}</span>
         )}
       </div>
       <div className="relative mt-2 inline-block font-mono text-[11px] uppercase tracking-[0.28em] text-muted">
