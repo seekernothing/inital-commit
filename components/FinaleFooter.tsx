@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { FOOTER_COLUMNS, VIDEO_URL, LOGO_SRC } from "@/lib/data";
@@ -38,6 +40,7 @@ export function FinaleFooter() {
         <Reveal>
           <a
             href="#"
+            onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
             className="group relative inline-block pb-1 font-mono text-[16px] tracking-[0.1em] text-ink"
           >
             hello@signalshq.io ↗
@@ -77,6 +80,7 @@ export function FinaleFooter() {
                     <a
                       key={link.label}
                       href={link.href}
+                      onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
                       className="block py-1 text-[14px] font-medium text-muted transition-colors duration-[250ms] hover:text-accent"
                     >
                       {link.label}
@@ -95,6 +99,7 @@ export function FinaleFooter() {
               <a
                 href="#"
                 aria-label="X"
+                onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
                 className="grid h-[38px] w-[38px] place-items-center rounded-full border border-line text-muted transition-all duration-300 hover:border-accent hover:bg-accent hover:text-bg"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -104,6 +109,7 @@ export function FinaleFooter() {
               <a
                 href="#"
                 aria-label="LinkedIn"
+                onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
                 className="grid h-[38px] w-[38px] place-items-center rounded-full border border-line text-muted transition-all duration-300 hover:border-accent hover:bg-accent hover:text-bg"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

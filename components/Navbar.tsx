@@ -151,6 +151,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <a
               href="#"
+              onClick={() => { try { new Audio('/assets/smoothing-exit.webm').play() } catch(e){} }}
               className="block rounded-lg bg-accent/10 px-[18px] py-2.5 text-[13.5px] font-medium text-accent transition-colors duration-[400ms] hover:bg-accent/20"
             >
               Book a demo
